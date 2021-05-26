@@ -1,0 +1,24 @@
+@media screen and (max-width: 1150px) {
+    .findUsPageDiv {
+        flex-direction: column-reverse;
+        height: 100%;
+    }
+    
+    .findUsPageDiv .leftSide, .findUsPageDiv .rightSide {
+        width: 100%;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .findUsPageDiv .leftSide {
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .findUsPageDiv .bottomDiv {
+        flex-direction: column;
+        align-items: center;
+        /* border: 2px solid greenyellow; */
+    }
+}

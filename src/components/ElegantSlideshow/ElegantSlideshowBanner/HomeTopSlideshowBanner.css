@@ -1,0 +1,320 @@
+.firstSliderParagraphOuterWrapper {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    z-index: 1;
+    border: 1px solid transparent;
+}
+
+.firstSliderParagraphWrapper {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    z-index: 1;
+    display: none;
+}
+
+.firstSliderParagraphWrapper.show {
+    display: flex;
+    animation: 1s bannerRevealOpacityAnim forwards cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes bannerRevealOpacityAnim {
+    0% {
+        transform: scale(.95);
+        opacity: 0;
+    }
+    100% {
+        transform: unset;
+        opacity: 1;
+    }
+}
+
+.firstSliderParagraphDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: rgba(18, 32, 22, 0.9); */
+    background: linear-gradient(to top, rgba(10, 54, 23, 0.9), rgba(2, 20, 2, 0.9));
+    /* background: radial-gradient(rgba(10, 54, 23, 0.9), rgba(2, 20, 2, 0.8)); */
+    box-shadow: 0 0 30px 10px black;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    /* border-radius: 10px; */
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    /* border: 2px solid red; */
+    
+    border: 1.5px solid rgb(31, 211, 124);
+    box-shadow: 
+    0 0 10px 0 rgb(31, 211, 124)
+    , inset 0 0 20px 0 rgb(31, 211, 124, 0.6)
+    , 0 10px 20px 0px rgb(0, 0, 0);
+}
+
+/* ABeeZee|Allura|Italiana|Montserrat|Philosopher|Poiret+One|Quicksand|Sofia */
+.firstSliderWelcomeParagraph {
+    /* position: absolute; */
+    /* top: 30%; */
+    /* left: 20%; */
+    margin: 0;
+    padding: 0;
+    z-index: 5000;
+    color: white;
+    font-size: 70px;
+    letter-spacing: -4px;
+    font-style: italic; 
+    text-shadow: 
+    1px 0 2px black
+    , 1px 0 2px black
+    ;
+    font-family: serif;
+    /* border: 2px solid white; */
+    opacity: 0;
+    animation: 0.7s revealSliderParagraph forwards 1s;
+}
+
+@keyframes revealSliderParagraph {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.firstSliderWelcomeParagraph span {
+    /* font-weight: lighter; */
+    letter-spacing: 2px;
+    font-family: "Sofia";
+    margin-left: 15px;
+    color: rgb(171, 201, 36);
+    text-shadow: 
+    1px 0 2px black
+    , 1px 0 2px black
+    , -2px 0 1px black
+    , 0px 2px 2px greenyellow
+    ;
+}
+
+.firstSliderDiscoverParagraph {
+    font-family: Montserrat;
+    /* font-family: serif; */
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 30px;
+    letter-spacing: -2px;
+    font-style: normal; 
+    text-shadow: 
+    1px 0 2px black
+    , 1px 0 2px black
+    ;
+    z-index: 5000;
+    /* border: 2px solid white; */
+    opacity: 0;
+    animation: 1s revealSliderParagraph forwards 2s;
+}
+
+.firstSliderButtonsDiv {
+    margin-top: 15px;
+    /* border: 2px solid white; */
+    /* z-index: 3000; */
+}
+
+.firstSliderButtonsDiv button:first-child {
+    opacity: 0;
+    animation: 0.5s revealFromLeft forwards 2.5s ease-in-out;
+}
+.firstSliderButtonsDiv button:last-child {
+    opacity: 0;
+    animation: 0.5s revealFromRight forwards 2.5s ease-in-out;
+}
+
+@keyframes revealFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes revealFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* ABeeZee|Allura|Italiana|Montserrat|Philosopher|Poiret+One|Quicksand|Sofia */
+.firstSliderButtonsDiv button {
+    font-family: montserrat;
+    /* border: 2px solid white; */
+    background: none;
+    border: 2px solid greenyellow;
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    color: white;
+    /* font-weight: bolder; */
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: none;
+    position: relative;
+    z-index: 20000;
+    perspective: 2000px;
+    perspective-origin: top;
+    overflow: hidden;
+    transition: 1s;
+    outline: none !important;
+}
+
+.firstSliderButtonsDiv button:not(:first-child) {
+    margin-left: 20px;
+}
+
+.firstSliderButtonsDiv button::before {
+    /* display: none; */
+    position: absolute;
+    content: "Our Menu";
+    font-weight: 300;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(180, 221, 98);
+    z-index: 20000;
+    transition: .5s all, 0.5s color 0.5s;
+    transform: rotateX(-20deg) translateY(-105%) skewY(5deg);
+    color: green;
+    text-shadow: 0px 0px 6px rgb(9, 169, 46);
+}
+
+.firstSliderButtonsDiv button:first-child::before {
+    content: "LEARN MORE";
+    z-index: 20000;
+    
+}
+
+.firstSliderButtonsDiv button:hover::before {
+    color: black;
+    transform: unset;
+}
+
+.firstSliderButtonsDiv button:hover {
+    box-shadow: 0 0 8px 0 greenyellow;
+}
+
+.firstSliderButtonsDiv .glowUpButton {
+    animation: 1s glowUp 3s;
+}
+
+@keyframes glowUp {
+    0% {
+        box-shadow: 0 0 0px 0 greenyellow;
+    }
+    50% {
+        box-shadow: 0 0 5px 0 greenyellow;
+    }
+    100% {
+        box-shadow: 0 0 20px 0 transparent;
+    }
+}
+
+.utensilsIcon {
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    /* background-image: url('../../../../images/utensils.svg'); */
+    filter: 
+    /* opacity(0.9) */
+    invert(0.5)
+    sepia(1)
+    saturate(5)
+    brightness(400%)
+    hue-rotate(10deg) 
+    /* drop-shadow(0 5px 10px rgba(67, 255, 83, 0.7))
+    drop-shadow(0 0px 1px rgba(47, 255, 47, 0.9)); */
+    drop-shadow(0 5px 10px rgb(171, 201, 36, 0.5))
+    drop-shadow(0 0px 1px rgb(171, 201, 36, 0.9));
+    ;
+    position: relative;
+    opacity: 0;
+    animation: 1s revealUtensils forwards 1.5s;
+}
+
+@keyframes revealUtensils { 
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes revealUtensilsLines {
+    0% {
+        opacity: 0;
+        max-width: 0px;
+    }
+    100% {
+        opacity: 1;
+        max-width: 300px;
+    }
+}
+
+/* right */
+
+.utensilsIconWrapper {
+    width: fit-content;
+    height: fit-content;
+    /* border: 3px solid red; */
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.utensilsIconWrapper::before {
+    position: absolute;
+    content: "";
+    left: 25px;
+    /* background-color: black; */
+    background: linear-gradient(to right, greenyellow, transparent 80%);
+    width: 100px;
+    height: 2.5px;
+    max-width: 0px;
+    animation: 1s revealUtensilsLines forwards 1.8s ease-in;
+}
+
+.utensilsIconWrapper::after {
+    position: absolute;
+    content: "";
+    right: 25px;
+    /* background-color: black; */
+    background: linear-gradient(to left, greenyellow 30%, transparent 80%);
+    width: 100px;
+    height: 2.5px;    
+    max-width: 0px;
+    animation: 1s revealUtensilsLines forwards 1.8s ease-in;
+}

@@ -1,0 +1,24 @@
+.aboutDiv {
+    display: flex;
+    flex-direction: column;
+    /* border: 3px solid cyan; */
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.aboutTopHalf {
+    height: 600px;
+    width: 100%;
+    display: flex;
+    /* border: 5px solid white; */
+}
+
+.aboutBottomHalf {
+    display: flex;
+    height: 300px;
+    width: 100%;
+    margin-top: 15px;
+    z-index: 3;
+    /* border: 5px solid hotpink; */
+    /* display: none; */
+}

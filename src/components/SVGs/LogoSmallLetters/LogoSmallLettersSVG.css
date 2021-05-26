@@ -1,0 +1,43 @@
+.logoSmallLettersSVG{
+    position: absolute;
+    top: 45px;
+    right: 5px;
+
+    width: 50px;
+    height: auto;
+
+    transition: 3s stroke-dashoffset ease-in-out, 1s filter, .5s transform;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
+    filter: 
+    drop-shadow(-0px 0px 10px rgba(135, 235, 135, 0.6))
+    drop-shadow(-0px 0px 10px rgba(103, 243, 103, 0.6))
+    ;
+    /* z-index: 6; */
+    z-index: 5001;
+}
+
+.drawLogoSmallLetters { 
+    stroke-dashoffset: 800px;
+}
+
+.logoSmallLettersSVG:hover {
+    transform: scale(2.5, 2.5);
+}
+
+.fillLogoSmallLetters .logoSmallLettersPath {
+    fill:rgb(177, 247, 177);
+    stroke:rgb(177, 247, 177);
+    stroke-width:0.25px;
+    stroke-miterlimit:10;
+    /* stroke-width: 1px; */
+}
+
+.logoSmallLettersPath{
+    fill:rgba(0, 0, 0, 0);
+    stroke:rgb(177, 247, 177);    
+    stroke-width:0.25;
+    stroke-miterlimit:10;
+    stroke-width: 1px;
+    transition: 2s stroke, 2s fill, 2s stroke-width;
+}

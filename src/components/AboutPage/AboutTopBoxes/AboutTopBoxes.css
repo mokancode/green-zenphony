@@ -1,0 +1,96 @@
+.aboutTopBoxes * {
+    /* display: none; */
+}
+
+.aboutTopBoxes {
+    /* margin-left: 5px; */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid tomato; */
+    transition: 1s box-shadow 1s;
+    /* border: 2px solid crimson; */
+    z-index: 2;
+}
+
+/* .aboutTopBoxes * {
+    display: none;
+} */
+
+.aboutTopBoxes.showShadow {
+    /* box-shadow: 5px 0 30px 0 rgb(117, 128, 84, 0.7); */
+}
+
+.aboutTopBoxes.hideShadow {
+    /* box-shadow: 5px 0 30px 0 rgb(117, 128, 84, 0.0); */
+}
+
+.aboutTopBoxes .topRow, .aboutTopBoxes .bottomRow {
+    height: 50%;
+    /* border: 2px solid springgreen; */
+    display: flex;
+}
+
+.aboutTopBoxes .topRow {
+    margin-bottom: 15px;
+}
+
+@media screen and (max-width: 1200px) {
+    .aboutTopBoxes {
+        width: 100%;
+        height: 50%;
+        /* border: 5px solid tomato; */
+    }
+
+    .aboutTopBoxes .topRow .aboutBox:nth-of-type(1),
+    .aboutTopBoxes .bottomRow .aboutBox:nth-of-type(1)
+     {
+        margin-left: 0px;
+    }
+
+    .aboutTopBoxes .topRow .aboutBox:nth-of-type(2) {
+        margin-left: 15px;
+    }
+
+    .aboutTopBoxes .topRow .aboutBox img,
+    .aboutTopBoxes .bottomRow .aboutBox img
+    {
+        height: 100%;
+    }
+
+    .aboutTopBoxes .topRow {
+        margin-bottom: 0px;
+        padding-top: 15px;
+    }
+
+    .aboutTopBoxes .bottomRow {
+        padding-top: 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .aboutTopBoxes {
+        height: 1200px;
+        /* border: 5px solid seagreen; */
+    }
+
+    .aboutTopBoxes .topRow, .aboutTopBoxes .bottomRow {
+        flex-direction: column;
+        /* border: 5px solid red; */
+    }
+    
+    .aboutTopBoxes .aboutBox {
+        height: 50%;
+        width: 100%;
+        margin: 0px;
+        /* border: 3px solid red; */
+    }
+
+    .aboutTopBoxes .topRow .aboutBox:nth-of-type(2),
+    .aboutTopBoxes .bottomRow .aboutBox:nth-of-type(2)
+    {
+        margin-top: 15px;
+        margin-left: 0px;
+        /* border: 2px solid greenyellow */
+    }
+}

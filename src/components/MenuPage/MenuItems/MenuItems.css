@@ -1,0 +1,184 @@
+.menuItemsDiv {
+    background-color: wheat;
+    width: 100%;
+    flex-grow: 1;
+    position: relative;
+    /* display: none; */
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition-duration: .8s;
+    transform-origin: top;
+    margin-top: 15px;
+    transform: scale(.95);
+    opacity: 0;
+    z-index: 1;
+    /* display: none; */
+    padding-top: 50px;
+    /* border: 5px solid red; */
+}
+
+.menuItemsDiv * {
+    /* display: none !important; */
+}
+
+.menuItemsDiv.show {
+    transition-delay: .5s;
+    transform-origin: top;
+    transform: unset;
+    opacity: 1;
+}
+
+.menuItemsList {
+    padding: 0;
+    padding-top: 120px;
+    margin: 0;
+    height: fit-content;
+    /* border: 3px solid blue; */
+    position: relative;
+}
+
+.menuVeilWrapper {
+    position: absolute;
+    width: calc(100% + 1px);
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 2;
+    /* display: none; */
+    /* opacity: 0; */
+    /* border: 2px solid red; */
+}
+
+.menuVeil {
+    /* display: none; */
+    width: 100%;
+    height: 200%;
+    /* background: linear-gradient(to top, grey 80%, transparent); */
+    background: linear-gradient(to top, wheat 80%, transparent);
+    transition: 1.5s;
+    transform: translateY(-101%);
+    /* animation: 1.5s hideMenuVeil forwards; */
+    /* transform: translateY(-100%) rotate(180deg); */
+}
+
+@keyframes showMenuVeil {
+    from {
+        transform: translateY(-100%) rotate(180deg);
+    }
+    to {
+        transform: translateY(0%) rotate(180deg);
+    }
+}
+
+@keyframes hideMenuVeil {
+    from {
+        transform: translateY(-50%);
+    }
+    to {
+        transform: translateY(50%);
+    }
+}
+
+.menuVeil.show { animation: .5s showMenuVeil forwards ease-in; }
+.menuVeil.hide { animation: 1s hideMenuVeil forwards ease-out; }
+
+/* Custom Scrollbar */
+/* width */
+.menuItemsDiv::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.menuItemsDiv::-webkit-scrollbar-track {
+    background: wheat; 
+}
+
+/* Handle */
+.menuItemsDiv::-webkit-scrollbar-thumb {
+    background: rgb(202, 136, 91); 
+}
+
+/* Handle on hover */
+.menuItemsDiv::-webkit-scrollbar-thumb:hover {
+    background: rgb(180, 115, 72); 
+}
+
+.menuItemsCategoryName {
+    margin-left: 60px;
+    position: absolute;
+    top: 50px;
+    font-family: Playball;
+    font-size: 40px;
+    color: darkgreen;
+    width: fit-content;
+    /* z-index: 2; */
+    /* border: 1px solid red; */
+    overflow: hidden;
+    /* display: none; */
+}
+
+.menuItemsCategoryName span {
+    color: black;
+}
+
+.menuItemsCategoryName::before {
+    position: absolute;
+    content: "";
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, wheat 21%, wheat 70%, rgba(0,0,0,0) 88%);
+    /* background: linear-gradient(90deg, rgba(0,0,0,0) 0%, black 21%, black 70%, rgba(0,0,0,0) 88%); */
+    transition: 1s;
+    transform: translateX(-20%);
+    transform: translateX(50%);
+}
+
+@keyframes showCategoryVeil {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(-20%); }
+}
+
+@keyframes hideCategoryVeil {
+    from { transform: translateX(-20%); }
+    to { transform: translateX(50%); }
+}
+
+.menuItemsCategoryName.showVeil::before {
+    animation: .5s showCategoryVeil forwards;
+}
+.menuItemsCategoryName.hideVeil::before {
+    animation: .5s hideCategoryVeil forwards;    
+}
+
+/* .pageSwitching-enter .menuItemsDiv {
+    transform: scale(.95);
+    opacity: 0;
+}
+
+.pageSwitching-enter-done .menuItemsDiv {
+    transition-delay: 0s;
+    transform: scale(1);
+    opacity: 1;
+} */
+
+.pageSwitching-exit .menuItemsDiv {
+    opacity: 1;
+}
+
+.pageSwitching-exit.pageSwitching-exit-active .menuItemsDiv {
+    opacity: 0;
+    transform: scale(.95);
+}
+
+@media screen and (max-width: 720px) {
+    .menuItemsDiv {
+        margin-top: 0;
+        top: 70px;
+        height: 80vh;
+    }
+
+    .menuItemsCategoryName {
+        margin-left: 40px;
+    }
+}

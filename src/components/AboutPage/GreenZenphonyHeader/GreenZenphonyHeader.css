@@ -1,0 +1,51 @@
+.gzHeaderSt0{
+    /* fill:none; */
+    fill: rgb(110, 133, 18, 0);
+    stroke:rgb(0, 0, 0);
+    stroke-miterlimit:10;
+    stroke-width: 1px;
+    transition: 1.5s fill 1s;
+    position: relative;
+}
+
+.gzHeaderSt0Fill {
+    fill: rgb(110, 130, 23);
+}
+
+.greenZenphonyHeaderSVG {
+    position: relative;
+    height: 100px;
+    width: 300px;
+    margin-left: 10px;
+    margin-bottom: -10px;
+    /* transition: 1.5s all ease-in 1.7s, 1s filter 1.9s; */
+    
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;    
+    /* border: 2px solid red; */
+}
+
+.greenZenphonyHeaderSVGDraw {
+    stroke-dashoffset: 600;
+    filter: 
+    drop-shadow(0 0 1px rgb(0, 0, 0, .1))
+    drop-shadow(-1px 0 1px rgb(0, 0, 0, .1))
+    drop-shadow(1px -1px 1px rgb(0, 0, 0, .1))
+    drop-shadow(0px 2px 2px rgb(11, 35, 7, .8)
+    );
+}
+
+@media screen and (max-width: 700px) {
+    .greenZenphonyHeaderSVG {
+        margin-left: 0px;
+        margin-bottom: 0px;
+        padding: 0 2px;
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .greenZenphonyHeaderSVG {
+        width: 100%;
+    }
+}

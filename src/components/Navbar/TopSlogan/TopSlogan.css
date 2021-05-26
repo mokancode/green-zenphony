@@ -1,0 +1,104 @@
+.sloganSpace {
+    margin-right: 10px;
+    /* display: none; */
+}
+
+.sloganList {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    /* border: 1px solid white; */
+}
+
+.sloganListLeft li {
+    /* disp */
+}
+
+.sloganLetter {
+    /* display: none; */
+}
+
+.sloganLetter:hover {
+    cursor: default;
+}
+
+.sloganLetter:hover {
+    transform: translateY(-5px);
+    transition: 0.2s;
+    color: greenyellow;
+}
+
+.sloganLetterLeft {
+    transition: 0.5s ease-out;
+    opacity: 0;
+    transform: translateX(-5px) translateY(-10px);
+}
+
+.sloganLetterRight {
+    /* display: none; */
+    transition: 0.5s ease-out;
+    opacity: 0;
+    transform: translateX(5px) translateY(10px);
+}
+
+.sloganLetterShow {
+    opacity: 1;
+    transform: unset;
+}
+
+
+/* ABeeZee|Allura|Montserrat|Philosopher|Poiret+One|Quicksand */
+.topSloganDiv {
+    color: rgb(220, 220, 220);
+    font-family: poiret one;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    /* display: none; */
+    /* border: 2px solid white; */
+}
+
+.topSloganDiv::before {
+    position: absolute;
+    content: "";
+    top: 45%;
+    left: -5px;
+    /* background-color: rgb(52, 255, 34); */
+    background-color: rgb(176, 211, 173);
+    width: 4px;
+    height: 4px;
+    border-radius: 100px;
+    transition: 0.5s;
+    opacity: 0;
+    /* display: none; */
+}
+
+.topSloganDiv::after {
+    position: absolute;
+    content: "";
+    top: 45%;
+    right: -5px;
+    /* background-color: rgb(52, 255, 34); */
+    background-color: rgb(176, 211, 173);
+    /* background-color: red; */
+    width: 4px;
+    height: 4px;
+    border-radius: 100px;
+    transition: 0.5s;
+    opacity: 0;
+    /* display: none; */
+}
+
+.topSloganDivDots::before{
+    opacity: 1;
+    left: -15px;
+}
+
+.topSloganDivDots::after {
+    opacity: 1;
+    right: -15px;
+}

@@ -1,0 +1,110 @@
+.menuCategories {
+    height: 70px;
+    min-height: 70px;
+    width: 100%;
+    background-color: wheat;
+    opacity: 0;
+    transition-duration: .8s;
+    box-shadow: 0 25px 30px 0 black;
+    z-index: 2;
+}
+
+.menuCategories.show {
+    transition-delay: .3s;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.menuCategoriesList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 0px;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+}
+
+.menuCategoriesList > li {
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    place-items: center;
+    position: relative;
+    /* border: 1px solid red; */
+}
+
+.menuCategoriesList li:not(:first-child) {
+    margin-left: 40px;
+}
+
+.menuCategoriesList .categoryName {
+    font-size: 20px;
+    font-family: Poiret One;
+    font-weight: bold;
+    white-space: pre;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    color: rgb(80, 74, 74);
+}
+
+.menuCategoriesList .categoryName.current {
+    color: rgb(0, 99, 0);
+}
+
+.menuCategoriesList .categoryName::before {
+    position: absolute;
+    content: "";
+    bottom: -5px;
+    width: 20px;
+    height: 1.5px;
+    background-color: rgb(175, 108, 45);
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: .3s ease-in-out;
+}
+
+.menuCategoriesList .categoryName.current::before {
+    width: 100%;
+    transform: scaleX(1);
+    background-color: rgb(5, 105, 2);
+}
+
+.menuCategoriesList li .categoryName:hover:before {
+    transform: scaleX(1);
+}
+
+.pageSwitching-exit .menuCategories {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.pageSwitching-exit.pageSwitching-exit-active .menuCategories {
+    opacity: 0;
+    transform: scale(.95);
+}
+
+@media screen and (max-width: 1200px) {
+    .menuCategoriesList li:not(:first-child) {
+        /* margin-left: 20px; */
+    }
+
+    .menuCategoriesList .categoryName {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .menuCategoriesList li:not(:first-child) {
+        /* margin-left: 20px; */
+    }
+
+    .menuCategoriesList .categoryName {
+        font-size: 22px;
+    }
+}

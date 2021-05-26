@@ -1,0 +1,37 @@
+.logoCircleSVG {
+    position: absolute;
+    
+    transition: 2s stroke-dashoffset ease-in-out, 1s filter;
+    stroke-dasharray: 1400px;
+    stroke-dashoffset: 1400px;
+    z-index: 5000;
+}
+
+.drawLogoCircle {
+    stroke-dashoffset: 0px;
+}
+
+.logoCircleGlow {
+    filter: 
+    drop-shadow(-0px 0px 5px rgba(135, 235, 135, 0.6))
+    drop-shadow(-0px 0px 5px rgba(103, 243, 103, 0.6))
+    /* drop-shadow(0px -0px 1px pink) */
+    ;
+}
+
+.logoCircleGlow .logoCirclePath{
+    stroke:rgb(119, 214, 119);
+}
+
+#Background_xA0_Image_1_ {
+    display: none;
+    fill: none !important;
+}
+
+.logoCirclePath {
+    fill:none;
+    stroke:rgb(99, 177, 99);
+    stroke-width:5;
+    stroke-miterlimit:10;
+    z-index: 5;
+}

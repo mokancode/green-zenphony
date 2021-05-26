@@ -1,0 +1,188 @@
+.elegantSlideshow {
+    width: 100%;
+    height: 600px;
+    padding: 20px;
+    background: radial-gradient(rgb(82, 35, 17), rgb(22, 9, 4));
+    border: 1px solid rgb(94, 41, 17);
+    cursor: none;
+    overflow: hidden;
+    transition: .5s;
+    /* transform: scale(.95);
+    opacity: 0; */
+    border: 3px solid red;
+}
+
+.elegantSlideshow.show {
+    transform: unset;
+    opacity: 1;
+}
+
+.elegantSlideshow .imagesContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* border: 3px solid red; */
+}
+
+.elegantSlideshow .slideshowVeilWrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    pointer-events: none;
+    z-index: 3;
+    /* display: none; */
+}
+
+.elegantSlideshow .slideshowVeil {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+    transform: translateX(-101%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.elegantSlideshow.showVeil .slideshowVeil {
+    animation: 1s showVeil forwards cubic-bezier(0.65, 0, 0.35, 1);
+}
+.elegantSlideshow.hideVeil .slideshowVeil {
+    animation: 1s hideVeil forwards cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@keyframes showVeil {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0%); }
+}
+
+@keyframes hideVeil {
+    from { transform: translateX(0%); }
+    to { transform: translateX(100%); }
+}
+
+.elegantSlideshow .veilImgWrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: 1s;
+    /* transform: translateX(150%); */
+}
+
+.elegantSlideshow #veilImg {
+    border-radius: 50px;
+    width: 200px;
+    height: 200px;
+    /* background-color: wheat; */
+}
+
+.elegantSlideshow.showVeil .veilImgWrapper {
+    animation: 1s showVeilMockImg forwards cubic-bezier(0.65, 0, 0.35, 1);
+}
+.elegantSlideshow.hideVeil .veilImgWrapper {
+    animation: 1s hideVeilMockImg forwards cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@keyframes showVeilMockImg {
+    from { transform: translateX(110%); }
+    to { transform: translateX(0%); }
+}
+
+@keyframes hideVeilMockImg {
+    from { transform: translateX(0%); }
+    to { transform: translateX(-110%); }
+}
+
+.elegantSlideshow .slideshowImgWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    box-shadow: 0 0 20px 0 rgb(150, 84, 22, 0);
+    transition: 1s;
+    border-radius: 10px;
+    /* display: none; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.elegantSlideshow.showVeil .slideshowImgWrapper {
+    box-shadow: 0 0 20px 1px rgb(255, 146, 43);
+}
+
+.elegantSlideshow .slideshowImgInnerWrapper {
+    overflow: hidden;
+    height: 100%;
+    border-radius: inherit;
+    /* display: none; */
+}
+
+.elegantSlideshow .slideshowImg {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.elegantSlideshow.showVeil .slideshowImg {
+    animation: 1s hideelegantSlideshowImage ease-in;
+}
+.elegantSlideshow.hideVeil .slideshowImg {
+    animation: 1s showelegantSlideshowImage ease-out;
+}
+
+@keyframes hideelegantSlideshowImage {
+    from { transform: translateX(0px); }
+    to { transform: translateX(30px); }
+}
+
+@keyframes showelegantSlideshowImage {
+    from { transform: translateX(-30px); }
+    to { transform: translateX(0px); }
+}
+
+.elegantSlideshow .customCursorWrapper {
+    position: absolute;
+    /* left: -177px;
+    top: -102px; */
+    left: 0;
+    top:  0;
+    opacity: 0;
+    transition: .5s opacity;
+    z-index: 2;
+    /* display: none; */
+    pointer-events: none;
+    /* transform: translateX(10px) translateY(295px) !important; */
+}
+
+.elegantSlideshow .customCursorWrapper.show {
+    opacity: 1;
+}
+
+.pageSwitching-enter .elegantSlideshow {
+    transform: scale(.95);
+    opacity: 0;
+}
+.pageSwitching-enter-done.pageSwitching-enter-done .elegantSlideshow {
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+.pageSwitching-exit .elegantSlideshow {
+    transform: scale(1);
+    opacity: 1;
+}
+.pageSwitching-exit.pageSwitching-exit-active .elegantSlideshow {
+    transform: scale(.95);
+    opacity: 0;
+}

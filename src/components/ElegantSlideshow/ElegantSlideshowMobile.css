@@ -1,0 +1,60 @@
+@media screen and (max-width: 1000px) {
+    .elegantSlideshow {
+        height: 450px;
+    }
+
+    .findUsPageDiv .elegantSlideshow {
+        height: 350px;
+    }
+    
+    /* .elegantSlideshow .slideshowImg {
+        height: 100% !important;
+        border: 3px solid greenyellow;
+    } */
+}
+
+@media screen and (max-width: 800px) {
+    .elegantSlideshow {
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .elegantSlideshow {
+        height: 300px;
+    }
+
+    .findUsPageDiv .elegantSlideshow {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .findUsPageDiv .elegantSlideshow {
+        height: 250px;
+    }
+
+    .findUsPageDiv .elegantSlideshow img {
+        object-fit: cover;
+        object-position: 0% 0%;
+        animation: 7s marqueeImageLandscape infinite;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .elegantSlideshow {
+        padding: 5px;
+    }
+}
+
+@keyframes marqueeImageLandscape {
+    0% {
+        object-position: 0% 0%;
+    }
+    50% {
+        object-position: 100% 0%;
+    }
+    100% {
+        object-position: 0% 0%;
+    }
+}

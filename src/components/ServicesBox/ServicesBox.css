@@ -1,0 +1,110 @@
+.servicesDivWrapper {
+    padding-top: 10px;
+    width: 50%;
+    min-height: 100%;
+    background-color: rgb(21, 52, 35);
+    transform: rotate(10deg) translate(100px);
+    transition: .6s all .2s, .6s transform ease-out .2s;
+    opacity: 0;
+    box-shadow: 5px 0px 30px 0 rgba(62, 126, 91, 0.3);
+    border: 1px solid rgb(37, 182, 136);
+    
+    min-height: 300px;
+    max-height: 300px;
+    max-width: 400px;
+    
+    /* border: 3px solid red; */
+}
+
+.servicesDivWrapper * {
+    /* display: none !important; */
+}
+
+.findUsPageDiv .servicesDivWrapper {
+    background-color: rgb(17, 43, 29);
+    transform: translateX(30px);
+}
+
+.servicesDivWrapper.show {
+    opacity: 1;
+    transform: unset;
+}
+
+/* Services div */
+
+.servicesDiv {
+    margin: 10px 30px;
+}
+
+.servicesDiv p:first-child {
+    font-family: Poiret One;
+    font-size: 10px;
+    letter-spacing: 4px;
+    font-style: italic;
+    text-transform: uppercase;
+    color: white;
+    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.servicesDiv .cateringServicesText {
+    color: rgb(172, 255, 219) !important;
+    text-shadow: 0 0 10px rgb(86, 240, 173, 0.4);
+    font-family: Sofia;
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+/* ABeeZee|Allura|Italiana|Montserrat|Philosopher|Poiret+One|Quicksand|Sofia */
+.cateringDescriptionText {
+    color: rgb(199, 241, 224);
+    font-size: 14px;
+    font-family: Montserrat;
+}
+
+.servicesDiv ul {
+    color: rgb(199, 241, 224);
+    font-size: 14px;
+    font-family: Quicksand;
+    margin-left: 15px;
+    padding-left: 0;
+    font-style: italic;
+    /* font-weight: lighter; */
+    
+}
+
+.pageSwitching-enter .findUsPageDiv .servicesDivWrapper {
+    transform: translateX(30px);
+    opacity: 0;
+}
+
+.pageSwitching-enter-done .findUsPageDiv .servicesDivWrapper.show {
+    transition-delay: 1s;
+    transform: unset;
+    opacity: 1;
+}
+
+.pageSwitching-exit-done .findUsPageDiv .servicesDivWrapper {
+    transform: translateX(30px);
+    opacity: 0;
+}
+
+/* @media screen and (max-width: 1220px) {
+    .servicesDivWrapper {
+        height: 100%;
+    }
+} */
+
+@media screen and (max-width: 630px) {
+    .servicesDivWrapper {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .findUsPageDiv .servicesDivWrapper {
+        margin-top: 0px;
+        width: 100%;
+    }
+}

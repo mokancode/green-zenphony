@@ -1,0 +1,153 @@
+.menuTopGallery {
+    /* background-color: tan;     */
+    height: 300px;
+    width: 100%;
+    /* display: none; */
+    display: flex;
+    /* box-shadow: 0 20px 30px 0 black; */
+    z-index: 3;
+    /* border: 5px solid red; */
+}
+
+.menuTopGallery .menuTopGalleryItemWrapper {
+    width: 25%;
+    height: 100%;
+    position: relative;
+}
+
+.menuTopGallery .menuTopGalleryItem {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: wheat;
+    transition-duration: .8s;
+    transition-delay: .2s;
+    transform-origin: center;
+    transform: scale(.95);
+    opacity: 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+    0 0px 30px 0 rgb(19, 54, 41)
+    , 0 25px 35px 0 rgb(0, 0, 0)
+    ;
+}
+
+.menuTopGallery .menuTopGalleryItemWrapper:not(:last-child) {
+    margin-right: 15px;
+}
+
+.menuTopGallery .menuTopGalleryItem.show {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.menuTopGallery .menuTopGalleryItem img {
+    position: relative;
+    
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0% 0%;
+    /* display: none; */
+}
+
+.menuTopGallery .menuTopGalleryItem img.landscapeImg { animation: 15s marqueeImageLandscape infinite; }
+.menuTopGallery .menuTopGalleryItem img.portraitImg { animation: 15s marqueeImagePortrait infinite; }
+
+.pageSwitching-exit .menuTopGalleryItem {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.pageSwitching-exit.pageSwitching-exit-active .menuTopGalleryItem {
+    opacity: 0;
+    transform: scale(.95);
+}
+
+@media screen and (max-width: 1200px) {
+    .menuTopGallery {
+        height: 600px;
+        flex-wrap: wrap;
+    }
+    
+    .menuTopGallery .menuTopGalleryItemWrapper {
+        width: 50%;
+        height: 50%;
+    }
+    
+    .menuTopGallery .menuTopGalleryItem img {
+        width: 100%;
+        position: relative;
+    }
+        
+    .menuTopGallery .menuTopGalleryItemWrapper:not(:last-child) {
+        margin-right: 0px;
+    }
+    
+    .menuTopGallery .menuTopGalleryItemWrapper:nth-of-type(1),
+    .menuTopGallery .menuTopGalleryItemWrapper:nth-of-type(3)
+    {
+        padding-right: 7.5px;
+    }
+    
+    .menuTopGallery .menuTopGalleryItemWrapper:nth-of-type(2),
+    .menuTopGallery .menuTopGalleryItemWrapper:nth-of-type(4)
+    {
+        padding-left: 7.5px;
+    }
+    
+    .menuTopGallery .menuTopGalleryItemWrapper:nth-of-type(3),
+    .menuTopGallery .menuTopGalleryItemWrapper:nth-of-type(4)
+    {
+        padding-top: 15px;
+    }
+}
+
+@keyframes marqueeImagePortrait {
+    0% {
+        object-position: 0% 0%;
+    }
+    50% {
+        object-position: 0% 100%;
+    }
+    100% {
+        object-position: 0% 0%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .menuTopGallery {
+        height: 1200px;
+        /* border: 5px solid tomato; */
+    }
+    
+    .menuTopGallery .menuTopGalleryItemWrapper {
+        width: 100%;
+        height: 25%;
+    }
+    .menuTopGallery .menuTopGalleryItem img {
+    }
+
+    .menuTopGallery .menuTopGalleryItemWrapper:not(:last-child) {
+        padding-bottom: 15px;
+    }
+    
+    .menuTopGallery .menuTopGalleryItemWrapper:nth-of-type(1),
+    .menuTopGallery .menuTopGalleryItemWrapper:nth-of-type(3)
+    {
+        padding-right: 0px;
+    }
+    
+    .menuTopGallery .menuTopGalleryItemWrapper:nth-of-type(2),
+    .menuTopGallery .menuTopGalleryItemWrapper:nth-of-type(4)
+    {
+        padding-left: 0px;
+    }
+    
+    .menuTopGallery .menuTopGalleryItemWrapper:nth-of-type(3),
+    .menuTopGallery .menuTopGalleryItemWrapper:nth-of-type(4)
+    {
+        padding-top: 0px;
+    }
+}

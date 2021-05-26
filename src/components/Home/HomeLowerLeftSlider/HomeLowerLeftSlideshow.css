@@ -1,0 +1,239 @@
+.lowerLeftSlideshowDiv {
+    width: 0%;
+    margin-right: 15px;
+    height: 100%;
+    background-blend-mode: color;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 1s all .1s, 1s opacity 0.5s ease-out, 1s transform 0.5s ease-in-out, 1.5s width cubic-bezier(.79,.15,.64,1.15) .75s;
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+    /* opacity: 0;
+    box-shadow: 0 0 40px 0 rgb(29, 29, 29);
+    height: 100%; */
+    box-shadow: 0 0 20px 0 rgb(20, 41, 4);
+    /* display: none; */
+    /* border: 2px solid wheat;  */
+}
+
+.lowerLeftSlideshowDiv.showImage {
+    width: 50%;
+}
+
+.lowerLeftSlideshowDiv img {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    transition: .8s transform ease-in-out;
+}
+
+.lowerLeftSlideshowDiv img {
+    transform: translateX(-30px);
+}
+
+.lowerLeftSlideshowDiv.showText img {
+    transform: translateX(0px);
+}
+
+.lowerLeftSlideshowDiv.showText:hover img {
+    transform: translateX(-30px);
+}
+
+.lowerLeftSlideshowDiv.showText:hover .lowerLeftSlideshowInnerDiv {
+    opacity: 0;
+}
+
+.lowerLeftSlideshowDiv.showText:hover .lowerLeftSlideshowInnerDiv p {
+    transform: translateX(-50px);
+}
+
+.lowerLeftSlideshowInnerDiv {
+    transition: 1s all;
+    position: absolute;
+    opacity: 1;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);   
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    /* border: 3px solid white; */
+    opacity: 0;
+}
+
+.lowerLeftSlideshowDiv.showText .lowerLeftSlideshowInnerDiv {
+    opacity: 1;
+}
+
+/* ABeeZee|Allura|Italiana|Montserrat|Philosopher|Poiret+One|Quicksand|Sofia*/
+.lowerLeftSlideshowInnerDiv p {
+    transition: 1s 0.1s;;
+    color: white;
+    font-size: 50px;
+    font-family: Allura;
+    text-shadow: 
+    -1px 0 2px black
+    , 0px -1px 3px black
+    , 0px -1px 2px black
+    ;
+    width: 500px;
+    margin-left: 30px;
+    /* border: 1px solid white;  */
+    transform: translateX(-50px);
+}
+
+.lowerLeftSlideshowDiv.showText .lowerLeftSlideshowInnerDiv p {
+    transform: unset;
+}
+
+.lowerLeftSlideshowInnerDiv p span {
+    font-weight: bold;
+}
+
+.restaurantAddress {
+    width: 500px;
+    padding-bottom: 100px;
+    /* border: 2px solid salmon; */
+}
+
+.restaurantAddress p {
+    margin: 0;
+    font-size: 20px;
+    font-family: Montserrat;
+    margin-left: 30px;
+    padding: 0;
+}
+
+.restaurantAddress p span {
+    font-family: Sofia;
+    font-weight: lighter;
+    font-size: 25px;
+}
+
+/* .pageSwitching-enter .elegantSlideshow {
+    transform: scale(.95);
+    opacity: 0;
+}
+.pageSwitching-enter-done.pageSwitching-enter-done .elegantSlideshow {
+    transform: scale(1);
+    opacity: 1;
+} */
+
+
+.pageSwitching-exit .lowerLeftSlideshowDiv {
+    transition: .5s cubic-bezier(.79,.15,.64,1.15);
+}
+.pageSwitching-exit.pageSwitching-exit-active .lowerLeftSlideshowDiv {
+    /* width: 0%; */
+    transform: scale(0);
+}
+
+@media screen and (max-width: 1220px) {
+    .lowerLeftSlideshowDiv {
+        /* border: 3px solid red; */
+        height: 600px;
+        margin-bottom: 15px;
+        margin-right: 0px;
+    }
+    
+    .lowerLeftSlideshowDiv.showImage {
+        width: 100%;
+        height: 500px;
+    }
+    
+    .lowerLeftSlideshowInnerDiv p {
+        width: 85%;
+        font-size: 50px;
+        /* border: 2px solid red; */
+    }
+    
+    .restaurantAddress {
+        width: 90%;
+        padding-bottom: 100px;
+        /* border: 2px solid salmon; */
+    }
+    
+    .restaurantAddress p {
+        margin: 0;
+        font-size: 25px;
+        margin-left: 30px;
+        padding: 0;
+    }
+    
+    .restaurantAddress p span {
+        font-size: 25px;
+        
+        /* letter-spacing: 2px; */
+        /* font-family: "Sofia"; */
+        color: rgb(224, 252, 101);
+        text-shadow: 
+        0px 0 1px black
+        , 0px 0 1px black
+        , -1px 0 1px black
+        , 0px 1px 2px greenyellow
+       ;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .lowerLeftSlideshowDiv {
+        top: 0;
+        left: 0;
+        position: relative;
+        margin-bottom: 0px;
+        /* border: 2px solid greenyellow; */
+        /* width: 100%; */
+        height: 400px;
+        /* display: block; */
+        /* position: relative; */
+        /* BORD */
+    }
+    
+    .lowerLeftSlideshowInnerDiv p {
+        font-size: 40px;
+        width: 85%;
+        /* border: 2px solid red; */
+    }
+    
+    .restaurantAddress {
+        width: 90%;
+        padding-top: 50px;
+        padding-bottom: 10px;
+        /* border: 2px solid salmon; */
+    }
+    
+    .restaurantAddress p {
+        margin: 0;
+        font-size: 25px;
+        margin-left: 30px;
+        padding: 0;
+    }
+    
+    .restaurantAddress p span {
+        font-size: 25px;
+        
+        /* letter-spacing: 2px; */
+        /* font-family: "Sofia"; */
+        color: rgb(224, 252, 101);
+        text-shadow: 
+        0px 0 1px black
+        , 0px 0 1px black
+        , -1px 0 1px black
+        , 0px 1px 2px greenyellow
+       ;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .lowerLeftSlideshowInnerDiv p {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .lowerLeftSlideshowInnerDiv p {
+        font-size: 25px;
+    }
+}

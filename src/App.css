@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=ABeeZee|Allura|Italiana|Montserrat|Philosopher|Playball|Poiret+One|Quicksand|Sofia&display=swap');
+
+*, *::before, *::after { box-sizing: border-box !important; }
+p { margin: 0px }
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* max-width: 100vw;
+  min-width: 95vw; */
+  /* min-height: 100vh; */
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  /* width: 100v; */
+  /* height: fit-content; */
+  /* border: 4px solid tomato; */
+}
+
+.app *:not(.backgroundImg) {
+  /* display: none !important; */
+}
+
+/* Custom Scrollbar */
+/* width */
+.app:not(.touchScreen)::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.app:not(.touchScreen)::-webkit-scrollbar-track {
+  background: rgb(13, 33, 18); 
+}
+
+/* Handle */
+.app:not(.touchScreen)::-webkit-scrollbar-thumb {
+  background: rgb(16, 54, 39); 
+}
+
+/* Handle on hover */
+.app:not(.touchScreen)::-webkit-scrollbar-thumb:hover {
+  background: rgb(23, 77, 56); 
+}
+
+.backgroundImg {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  /* border: 3px solid red; */
+  width:  100vw;
+  height: 100vh;
+  /* object-fit: cover; */
+  /* object-position: left bottom; */
+  z-index: -1;
+  /* display: none; */
+  /* filter: brightness(150%); */
+}
+
+.navbarWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0%;
+  position: relative;
+  /* border: 3px solid red; */
+}
+
+.transition-group {
+  flex-shrink: 0;
+  display: flex;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  margin-top: 30px;
+  /* border: 3px solid cyan; */
+  /* display: none; */
+}
+
+.routesContainer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: fit-content;
+  flex-shrink: 0;
+  padding: 20px 80px;
+  display: flex;
+  align-items: center;
+  /* border: 3px solid greenyellow; */
+}
+
+@media screen and (max-width: 1350px) {
+  .routesContainer {
+    padding: 20px 20px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .routesContainer {
+    padding: 20px 10px;
+  }
+}
+
+#appVerWrapper {
+  position: fixed;
+  bottom: 4px;
+  left: 0px;
+  width: 50px;
+  height: 40px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 5px;
+  user-select: none;
+  /* border: 1px solid white; */
+}
+
+#appVerWrapper p {
+  color: white;
+  white-space: pre;
+  width: 0px;
+  overflow: hidden;
+  transition: .5s;
+  /* border: 1px solid red; */
+}
+
+#appVerWrapper:hover p {
+  width: 45px;
+}
+
+/* .pageSwitching-exit .homeDiv {
+  transition: 3s !important;
+  opacity: 1;
+}
+.pageSwitching-exit.pageSwitching-exit-active .homeDiv {
+  opacity: 0 !important;
+} */
+
+
+/* .pageSwitching-exit {
+  transition: 2s !important;
+  opacity: 1;
+}
+
+.pageSwitching-exit.pageSwitching-exit-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+} */

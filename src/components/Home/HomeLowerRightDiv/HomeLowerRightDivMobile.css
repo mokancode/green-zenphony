@@ -1,0 +1,98 @@
+@media screen and (max-width: 1220px) {
+    .lowerRightDiv {
+        width: 100%;
+    }
+    
+    .homeDiv .upperRow, .homeDiv .lowerRow {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .lowerRightDiv {
+        margin-top: 15px;
+        width: 100% !important;
+        /* margin-left: 12px !important; */
+        /* height: fit-content; */
+        /* border: 2px solid yellow; */
+    }    
+
+    .openingHoursWrapper {
+        height: 300px;
+    }
+
+    .upperRowSlider {
+        /* margin-top: 15px; */
+        /* width: 100% !important; */
+        height: 300px !important;
+    }
+
+    .lowerRowSlider {
+        /* order: 2; */
+        height: 300px !important;
+        /* width: 100% !important; */
+        /* height: 350px !important; */
+        /* margin-top: 15px; */
+        /* border: 2px solid white; */
+    }
+
+    /* .servicesDivWrapper {
+        margin-top: 10px;
+        order: 1;
+        width: 100% !important;
+        height: 240px !important;
+    } */
+}
+
+@media screen and (max-width: 630px) {
+    .homeDiv .upperRow, .homeDiv .lowerRow {
+        flex-direction: column;
+        align-items: center;
+        /* border: 3px solid red; */
+    }
+    
+    .homeDiv .upperRowSlider, .homeDiv .lowerRowSlider {
+        width: 100%;
+        margin-right: 0px;
+    }
+}
+
+/* @media screen and (max-width: 450px) {
+    .lowerRightDiv {
+        margin-top: 15px;
+        width: 95% !important;
+        height: fit-content;
+    }    
+
+    .upperRow, .lowerRow {
+        flex-direction: column;
+        height: fit-content !important;
+    }
+
+    .openingHoursWrapper {
+        height: 270px;
+        width: 100% !important;
+        margin-right: 0 !important; 
+    }
+
+    .upperRowSlider {
+        margin-top: 15px;
+        width: 100% !important;
+        height: 300px !important;
+    }
+
+    .lowerRowSlider {
+        order: 2;
+        height: 300px !important;
+        width: 100% !important;
+        height: 350px !important;
+        margin-top: 15px;
+    }
+
+    .servicesDivWrapper {
+        margin-top: 10px;
+        order: 1;
+        width: 100% !important;
+        height: 240px !important;
+    }
+} */

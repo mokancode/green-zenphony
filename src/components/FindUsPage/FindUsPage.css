@@ -1,0 +1,212 @@
+.findUsPageDiv {
+    width: 100%;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    /* padding-top: 30px;
+    padding-bottom: 30px; */
+    /* border: 3px solid steelblue; */
+}
+
+.findUsPageDiv p {
+    color: white;
+}
+
+.findUsPageDiv .leftSide {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 450px;
+    /* border: 2px solid white; */
+    margin-right: 15px;
+}
+
+.mapDivWrapper {
+    /* z-index: 11; */
+    margin-left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
+    padding: 10px;
+    background: linear-gradient(180deg, rgb(12, 17, 13), rgb(22, 41, 18));
+    position: relative;
+    transition: 0.5s, 1s max-height;
+    padding: 0;
+    box-shadow: none;
+    max-height: 0px;
+    max-width: 0px;
+    /* border: 3px solid transparent; */
+    /* border: 3px solid black; */
+}
+
+.findUsPageDiv .mapDivWrapperShowLoaded {
+    animation: 
+    1s revealMap forwards ease-in-out
+    , .5s expandMapHorizontally 1s forwards ease-in-out
+    , 1s expandMapVertically 1.5s forwards ease-in-out
+    , 0.5s restoreColors 1.7s forwards ease-in-out;
+    ;
+}
+
+@keyframes expandMapHorizontally {
+    0% {
+        max-width: 0px;
+    }
+    100% {
+        max-width: 100%;
+    }
+}
+
+@keyframes expandMapVertically {
+    0% {
+        max-height: 0px;
+    }
+    100% {
+        max-height: 600px;
+    }
+}
+
+@keyframes revealMap {
+    0% {
+        padding: 0;
+        border: 3px solid transparent;
+        box-shadow: none;
+    }
+    100% {
+        padding: 10px;
+        border: 3px solid rgb(135, 135, 135);
+        box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.99);
+    }
+}
+
+@keyframes restoreColors {
+    0% {
+        border: 3px solid rgb(135, 135, 135);
+        box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.99);
+    }
+    100% {
+        border: 3px solid black;
+        box-shadow: 0 0 40px 0 rgba(3, 25, 11, 0.99);
+    }
+}
+
+.mapDivWrapper .whiteScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 5000;
+}
+
+.mapDivWrapper .whiteScreenActivate {
+    animation: 0.5s revealMapContent 2s forwards;
+}
+
+@keyframes revealMapContent {
+    0% {
+        visibility: visible;
+        opacity: 1;
+    }
+    95% {
+        opacity: 0;
+    }
+    100% {
+        visibility: collapse;
+        opacity: 0;
+    }
+}
+
+
+
+.mapDivWrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background: linear-gradient(180deg, rgb(34, 34, 34), rgb(66, 66, 66)); */
+    background: linear-gradient(180deg, rgb(16, 22, 17), rgb(28, 69, 19));
+    transition: 1s all;
+    opacity: 0;
+}
+
+.mapDivWrapper:hover::before {
+    opacity: 1;
+}
+
+.mapDivWrapper span:nth-child(1)
+, .mapDivWrapper span:nth-child(2)
+, .mapDivWrapper span:nth-child(3)
+, .mapDivWrapper span:nth-child(4) {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: gray;
+    /* border-radius: 20px; */
+}
+
+.mapDivWrapper span:nth-child(1) {
+    border-top-left-radius: 20px;
+    top: 0;
+    left: 0;
+}
+.mapDivWrapper span:nth-child(2) {
+    top: 0;
+    right: 0;
+}
+.mapDivWrapper span:nth-child(3) {
+    left: 0;
+    bottom: 0;
+}
+.mapDivWrapper span:nth-child(4) {
+    bottom: 0;
+    right: 0; 
+}
+
+.mapDiv {
+    border: 1.3px solid rgb(6, 90, 31);
+    filter: 
+    invert(100%)
+    saturate(50%)
+    hue-rotate(200deg)
+    ;
+    height: 100%;
+    width: 100%;
+}
+
+.findUsPageDiv .rightSide {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* border: 3px solid cyan; */
+}
+
+.findUsPageDiv .rightSide .topDiv, .findUsPageDiv .rightSide .bottomDiv {
+    height: 50%;
+    display: flex;
+    /* border: 2px solid tomato; */
+}
+
+.findUsPageDiv .rightSide .topDiv {
+    /* border: 3px solid royalblue; */
+    margin-bottom: 10px;
+}
+
+.findUsPageDiv .rightSide * {
+    /* display: none !important; */
+}
+
+.pageSwitching-exit-active .mapDivWrapper {
+    transform: translateX(-20px);
+    opacity: 0;
+}

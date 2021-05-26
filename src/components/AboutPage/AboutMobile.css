@@ -1,0 +1,30 @@
+@media screen and (max-width: 1200px) {
+    .aboutTopHalf {
+        height: 1200px;
+        flex-direction: column;
+        /* border: 5px solid cyan; */
+    }
+    
+    .aboutBottomHalf {
+        /* border: 2px solid red; */
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .aboutBottomHalf {
+        height: 600px;
+        flex-wrap: wrap;
+        /* border: 5px solid deeppink; */
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .aboutBottomHalf {
+        height: 1200px;
+    }
+    
+    .aboutTopHalf {
+        height: fit-content;
+    }
+}
